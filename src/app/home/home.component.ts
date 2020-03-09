@@ -22,6 +22,14 @@ export class HomeComponent implements OnInit {
     this.ArticuloInyectado.leerNoticias().subscribe((articulosApi)=> {
       this.articulos= articulosApi;
     });
+
+    let articuloEnviar: Articulo= new Articulo();
+    articuloEnviar.body="Este es el cuerpo el articulo creado";
+    articuloEnviar.title="Titulo de articulo creado";
+    articuloEnviar.userId=1;
+    this.ArticuloInyectado.guardarArticulo(articuloEnviar).subscribe((articuloCreado)=> {
+      this.articulos.push(articuloCreado);
+    })
   }
 
   irAlDetalle(articulo: Articulo){

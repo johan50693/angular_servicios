@@ -14,7 +14,7 @@ export class ArticuloDetalleComponent implements OnInit {
   usuario: User= new User();
   constructor(private ArticuloInyectado: ArticulosService ) { 
     this.articulo= this.ArticuloInyectado.articulo;
-
+    
   }
   
   ngOnInit() {
